@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ..schemas.upload_schema import UploadResponseSchema
+from ..schemas.upload import UploadResponseSchema
 
 router = APIRouter()
 
