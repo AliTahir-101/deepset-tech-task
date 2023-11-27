@@ -1,9 +1,9 @@
-import pytest
-
 from fastapi.testclient import TestClient
 from unittest.mock import MagicMock
 from src.main import app
 from src.services.status import StatusService
+
+import pytest
 
 
 class TestStatusEndpoint:
