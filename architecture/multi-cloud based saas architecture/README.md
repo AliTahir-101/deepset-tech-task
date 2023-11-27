@@ -1,5 +1,7 @@
 # Multi-Cloud SaaS Architecture Overview
 
+![image](https://github.com/AliTahir-101/deepset-tech-task/assets/76158157/675ab849-d14d-443c-82cd-033b559d78f4)
+
 ## Architecture and Data Flow for Document Uploading
 
 The architecture leverages a multi-cloud approach to optimize for scalability and reliability:
