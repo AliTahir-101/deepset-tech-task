@@ -1,5 +1,7 @@
 # AWS-based SaaS Architecture Overview
 
+![image](https://github.com/AliTahir-101/deepset-tech-task/assets/76158157/cf027be8-3d3e-4434-b5ec-9178fdd9e694)
+
 ## Architecture and Data Flow for Document Uploading
 
 - Users upload files to the **API Cluster** hosted on **ECS**.
