@@ -1,9 +1,10 @@
 from fastapi import FastAPI
-from .routers import upload
+from .routers import upload, status
 
 app = FastAPI()
 
 app.include_router(upload.router)
+app.include_router(status.router)
 
 
 @app.get("/health")
