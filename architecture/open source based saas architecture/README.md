@@ -1,5 +1,7 @@
 # Open-Source On-Premises SaaS Architecture Overview
 
+![image](https://github.com/AliTahir-101/deepset-tech-task/assets/76158157/afc6a14d-ac58-4514-8d96-8ad7c83ccfb8)
+
 ## Architecture and Data Flow
 
 - **Users** initiate file uploads through the **API Servers**, which are load-balanced by **Nginx** to ensure even traffic distribution.
