@@ -1,0 +1,12 @@
+fastapi==0.68.0
+uvicorn==0.15.0
+python-multipart==0.0.5
+httpx==0.18.2
+pytest==6.2.5
+pytest-asyncio==0.15.1
+boto3==1.17.84  # For interacting with AWS services
+azure-storage-blob==12.8.1  # For Azure Blob Storage
+confluent-kafka==1.6.1  # For Apache Kafka
+aioredis==2.0.0  # For async Redis operations
+psycopg2-binary==2.9.1  # For PostgreSQL interactions
+google-cloud-load-balancing==0.4.0  # For GCP Load Balancer interactions
