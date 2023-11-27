@@ -5,8 +5,6 @@ from ..services.storage import StorageService
 from ..services.message_queue import MessageQueueService
 from ..schemas.upload import UploadResponseSchema
 
-# Configure the logger
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 router = APIRouter()

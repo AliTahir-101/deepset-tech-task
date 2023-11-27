@@ -4,8 +4,6 @@ from fastapi import APIRouter, HTTPException, Path, Depends
 from ..services.status import StatusService
 from ..schemas.status import FileStatusResponseSchema
 
-# Configure the logger
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
