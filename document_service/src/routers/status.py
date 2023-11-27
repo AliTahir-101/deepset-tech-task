@@ -1,16 +1,22 @@
+import logging
+
 from fastapi import APIRouter, HTTPException, Path, Depends
 from ..services.status import StatusService
 from ..schemas.status import FileStatusResponseSchema
 
+# Configure the logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 router = APIRouter()
 
 # Endpoint to check the processing status of an uploaded file.
-# GET /status/{file_id}
+# GET /files/{file_id}/status
 # The response model is defined in FileStatusResponseSchema which ensures consistent API responses.
 # StatusService is injected as a dependency for retrieving the file status.
 
 
-@router.get("/status/{file_id}", response_model=FileStatusResponseSchema)
+@router.get("/api/v1/files/{file_id}/status", response_model=FileStatusResponseSchema)
 async def check_file_status(
     # Path parameter to capture the file ID from the URL.
     file_id: str = Path(...),
@@ -22,5 +28,6 @@ async def check_file_status(
         status = await status_service.get_status(file_id)
         return FileStatusResponseSchema(file_id=file_id, status=status)
     except Exception as e:
+        logger.exception(f"Error retrieving file status: {e}")
         # Can Setup Different HTTP status codes based on the type of error.
         raise HTTPException(status_code=500, detail=str(e))

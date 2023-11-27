@@ -1,9 +1,9 @@
+import pytest
+
 from fastapi.testclient import TestClient
 from unittest.mock import MagicMock
 from src.main import app
 from src.services.status import StatusService
-
-import pytest
 
 # This class encapsulates all the test cases for the status endpoint.
 
@@ -22,7 +22,7 @@ class TestStatusEndpoint:
         # Configure the mock to return a specific status
         self.mock_status_service.get_status.return_value = expected_status
 
-        response = self.client.get(f"/status/{test_file_id}")
+        response = self.client.get(f"/api/v1/files/{test_file_id}/status")
 
         # Assert that the status service was called with the correct file ID
         self.mock_status_service.get_status.assert_called_with(test_file_id)

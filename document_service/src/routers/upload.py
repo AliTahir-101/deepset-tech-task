@@ -1,12 +1,18 @@
+import logging
+
 from fastapi import APIRouter, UploadFile, File, HTTPException, BackgroundTasks
 from ..services.storage import StorageService
 from ..services.message_queue import MessageQueueService
 from ..schemas.upload import UploadResponseSchema
 
+# Configure the logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 router = APIRouter()
 
 
-@router.post("/upload/", response_model=UploadResponseSchema)
+@router.post("/api/v1/files/", response_model=UploadResponseSchema)
 async def upload_file(
     background_tasks: BackgroundTasks,
     storage_service: StorageService,
@@ -21,4 +27,5 @@ async def upload_file(
             message_queue_service.send_message, file_reference)
         return {"file_id": file_reference, "status": "File uploaded and processing queued"}
     except Exception as e:
+        logger.exception(f"Failed to upload file: {e}")
         raise HTTPException(status_code=500, detail=str(e))
