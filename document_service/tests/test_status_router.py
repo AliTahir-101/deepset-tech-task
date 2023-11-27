@@ -5,6 +5,8 @@ from src.services.status import StatusService
 
 import pytest
 
+# This class encapsulates all the test cases for the status endpoint.
+
 
 class TestStatusEndpoint:
     @pytest.fixture(autouse=True)
