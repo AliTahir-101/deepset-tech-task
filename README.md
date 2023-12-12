@@ -24,10 +24,6 @@ A pull request has been opened, which contains comments and discussions around b
 
 To view the code review, please visit the [Pull Request](https://github.com/AliTahir-101/deepset-tech-task/pull/1) link.
 
-## General Feedback
-
-Thank you for the opportunity to tackle this challenge; I've thoroughly enjoyed architecting a solution that I believe is robust and scalable but I am a firm believer that collaboration and diverse perspectives lead to superior solutions.
-
 ---
 
 "The best way to predict the future is to invent it." - Alan Kay
